@@ -4,6 +4,7 @@
 
 <script>
 import * as d3 from 'd3'
+import utils from '@/utils'
 export default {
   data() {
     return {
@@ -12,42 +13,68 @@ export default {
       width: 800,
       height: 600,
       VIEWBOX: ``,
+      innerRadius: 30,
+      outerRadius: 70,
       nodes: [
         {
           id: 1,
           title: '1',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 80,
+            y: 85
+          }
         },
         {
           id: 2,
           title: '2',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 30,
+            y: 80
+          }
         },
         {
           id: 3,
           title: '',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 40,
+            y: 15
+          }
         },
         {
           id: 4,
           title: '',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 10,
+            y: 40
+          }
         },
         {
           id: 5,
           title: '',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 60,
+            y: 50
+          }
         },
         {
           id: 6,
           title: '',
           content: '',
-          childrens: []
+          childrens: [],
+          position: {
+            x: 90,
+            y: 20
+          }
         }
       ]
     }
@@ -68,17 +95,24 @@ export default {
       for (const node of this.nodes) {
         let g = this.svg.append('g').attr('class', 'station').attr('id', node.id)
         g.append('circle')
-          .attr('r', 30)
-          .attr('cx', Math.floor(Math.random() * (this.width - 200) + 200))
-          .attr('cy', Math.floor(Math.random() * (this.height - 100) + 100))
+          .attr('r', this.innerRadius)
+          .attr('cx', utils.translateCoords(node.position.x, this.width))
+          .attr('cy', utils.translateCoords(node.position.y, this.height))
+        g = this.svg.append('g').attr('class', 'station-border').attr('id', `out_${node.id}`)
+
+        g.append('circle')
+          .attr('r', this.outerRadius)
+          .attr('cx', utils.translateCoords(node.position.x, this.width))
+          .attr('cy', utils.translateCoords(node.position.y, this.height))
       }
-      d3.selectAll('circle')
+
+      d3.selectAll('.station')
         .on('mouseover', function () {
-          d3.select(this).transition().attr('r', 50)
+          d3.select(this).select('circle').transition().attr('r', 50)
           console.log('mouseover', this)
         })
         .on('mouseout', function () {
-          d3.select(this).transition().attr('r', 30)
+          d3.select(this).select('circle').transition().attr('r', 30)
           console.log('mouseout', this)
         })
     }
@@ -95,5 +129,10 @@ export default {
   stroke: black;
   stroke-width: 1;
   transition-duration: 0.5s;
+}
+.station-border {
+  stroke-opacity: 0.3;
+  fill: none;
+  stroke: grey;
 }
 </style>
