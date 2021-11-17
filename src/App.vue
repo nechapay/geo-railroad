@@ -41,4 +41,30 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+.svg-container {
+  border: 1px solid black;
+}
+.station {
+  fill: red;
+  stroke: black;
+  stroke-width: 1;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.station:hover {
+  fill: green;
+}
+
+.road {
+  stroke: black;
+  stroke-width: 5;
+}
+
+.station-border {
+  stroke-opacity: 0.3;
+  fill: none;
+  stroke: grey;
+}
 </style>
