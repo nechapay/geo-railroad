@@ -20,9 +20,14 @@ const getY = (r, y1, y2, angle) => {
   return r * Math.sin(angle) * k
 }
 
+const toRadians = (angle) => {
+  return (angle * Math.PI) / 180
+}
+
 export default {
   translateCoords,
   getAngle,
   getX,
-  getY
+  getY,
+  toRadians
 }

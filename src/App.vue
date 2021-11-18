@@ -46,7 +46,7 @@ export default {
   border: 1px solid black;
 }
 .station {
-  fill: red;
+  fill: #faa;
   stroke: black;
   stroke-width: 1;
   cursor: pointer;
@@ -54,7 +54,7 @@ export default {
 }
 
 .station:hover {
-  fill: green;
+  fill: #afa;
 }
 
 .road {
@@ -66,5 +66,23 @@ export default {
   stroke-opacity: 0.3;
   fill: none;
   stroke: grey;
+}
+
+.sub-station__circle {
+  fill: #faa;
+  stroke: black;
+  stroke-width: 1;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.sub-station__text {
+  font-size: 15px;
+  transform: translateY(4.6px);
+}
+
+.sub-station__line {
+  stroke: black;
+  stroke-width: 1;
 }
 </style>
