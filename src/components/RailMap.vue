@@ -1098,6 +1098,7 @@ export default {
       const mainGradient = svgDefs.append('linearGradient').attr('id', 'mainGradient')
       mainGradient.append('stop').attr('class', 'stop-left').attr('offset', '0')
       mainGradient.append('stop').attr('class', 'stop-right').attr('offset', '1')
+      // star
       let pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageStar')
@@ -1106,7 +1107,7 @@ export default {
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
-
+      // fluger
       pattern
         .append('image')
         .attr('x', 0)
@@ -1114,6 +1115,176 @@ export default {
         .attr('width', this.innerRadius * 2 + 2)
         .attr('height', this.innerRadius * 2 + 2)
         .attr('xlink:href', './img/star.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageFluger')
+        .attr('x', 210)
+        .attr('y', 450)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/fluger.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageFluger2')
+        .attr('x', 210)
+        .attr('y', 450)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/fluger-disabled.jpg')
+      // compas
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageCompas')
+        .attr('x', 50)
+        .attr('y', 210)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/compas.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageCompas2')
+        .attr('x', 50)
+        .attr('y', 210)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/compas-disabled.jpg')
+      // ship
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageShip')
+        .attr('x', 290)
+        .attr('y', 60)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/ship.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageShip2')
+        .attr('x', 290)
+        .attr('y', 60)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/ship-disabled.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageRama')
+        .attr('x', 690)
+        .attr('y', 90)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/rama.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageRama2')
+        .attr('x', 690)
+        .attr('y', 90)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/rama-disabled.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageRubeg')
+        .attr('x', 450)
+        .attr('y', 270)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/rubeg.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageRubeg2')
+        .attr('x', 450)
+        .attr('y', 270)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/rubeg-disabled.jpg')
       /*
 
 <pattern id="imageVokzal" x="200" y="-110" height="128" width="128"\n' +
