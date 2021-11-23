@@ -1,14 +1,16 @@
 <template>
   <div id="app" class="content-container fill">
     <rail-map />
+    <copyright />
   </div>
 </template>
 
 <script>
+import Copyright from './components/Copyright.vue'
 import RailMap from './components/RailMap.vue'
 export default {
   name: 'App',
-  components: { RailMap }
+  components: { RailMap, Copyright }
 }
 </script>
 
@@ -20,8 +22,14 @@ export default {
   margin: 0;
   padding: 0;
 }
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('/fonts/DINPro.ttf');
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: DINPro, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -35,6 +43,9 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url('/img/bg.jpg');
+  background-size: cover;
 }
 
 .fill {
@@ -44,17 +55,28 @@ export default {
 
 .svg-container {
   border: 1px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
+  margin-top: 5%;
+  height: 600px;
+  /* background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)), url('/img/map-bg.jpg');
+  background-size: cover; */
 }
 .station {
   fill: #faa;
-  stroke: black;
-  stroke-width: 1;
+  stroke: url(#mainGradient);
+  stroke-width: 0.5;
   cursor: pointer;
   transition-duration: 0.2s;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 }
 
 .station.disabled {
   fill: grey;
+  cursor: default;
+}
+
+.station.completed {
   cursor: default;
 }
 
@@ -67,8 +89,9 @@ export default {
 }
 
 .road {
-  stroke: black;
+  stroke: url(#mainGradient);
   stroke-width: 5;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 }
 
 .station-border {
@@ -77,12 +100,20 @@ export default {
   stroke: grey;
 }
 
+.sub-station {
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+}
+
 .sub-station__circle {
-  fill: #faa;
+  fill: url(#mainGradient);
   stroke: black;
-  stroke-width: 1;
+  stroke-width: 0.2;
   cursor: pointer;
   transition-duration: 0.2s;
+}
+
+.sub-station:hover .sub-station__circle {
+  stroke: red;
 }
 
 .sub-station__text {
@@ -206,5 +237,57 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 1%;
+}
+
+.stop-left {
+  stop-color: rgba(45, 197, 83, 0.8);
+}
+
+.stop-right {
+  stop-color: rgb(138, 240, 135);
+}
+
+#node_0 {
+  fill: url(#imageStar);
+}
+
+#node_1 {
+  fill: url(#imageFluger);
+}
+
+#node_1.disabled {
+  fill: url(#imageFluger2);
+}
+
+#node_2 {
+  fill: url(#imageCompas);
+}
+
+#node_2.disabled {
+  fill: url(#imageCompas2);
+}
+
+#node_3 {
+  fill: url(#imageShip);
+}
+
+#node_3.disabled {
+  fill: url(#imageShip2);
+}
+
+#node_4 {
+  fill: url(#imageRubeg);
+}
+
+#node_4.disabled {
+  fill: url(#imageRubeg2);
+}
+
+#node_5 {
+  fill: url(#imageRama);
+}
+
+#node_5.disabled {
+  fill: url(#imageRama2);
 }
 </style>

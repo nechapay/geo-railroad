@@ -1092,6 +1092,45 @@ export default {
         .attr('width', this.width)
         .attr('height', this.height)
         .attr('viewBox', this.VIEWBOX)
+
+      const svgDefs = this.svg.append('defs')
+
+      const mainGradient = svgDefs.append('linearGradient').attr('id', 'mainGradient')
+      mainGradient.append('stop').attr('class', 'stop-left').attr('offset', '0')
+      mainGradient.append('stop').attr('class', 'stop-right').attr('offset', '1')
+      let pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageStar')
+        .attr('x', 609)
+        .attr('y', 479)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2 + 2)
+        .attr('height', this.innerRadius * 2 + 2)
+        .attr('xlink:href', './img/star.jpg')
+      /*
+
+<pattern id="imageVokzal" x="200" y="-110" height="128" width="128"\n' +
+        '             patternUnits="userSpaceOnUse">\n' +
+        '      <image x="0" y="0" width="64" height="64" xlink:href="./img/vokzal.jpg"></image>\n' +
+        '    </pattern>
+*/
+      const image = this.svg.append('image')
+      image
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.width)
+        .attr('height', this.height)
+        .attr('xlink:href', './img/map-bg.jpg')
+        .attr('preserveAspectRatio', 'none')
+        .attr('id', 'imageMap')
+
       let road = []
       for (const node of this.nodes) {
         let x = utils.translateCoords(node.position.x, this.width)
@@ -1128,7 +1167,7 @@ export default {
     eventsInit() {
       let that = this
       d3.selectAll('.station').on('click', function () {
-        if (!d3.select(this).classed('disabled')) {
+        if (!d3.select(this).classed('disabled') && !d3.select(this).classed('completed')) {
           let viewbox = that.VIEWBOX.split(' ')
           let bbox = this.getBBox()
           let vb = [bbox.x - bbox.width / 1.1, bbox.y - bbox.height / 1.3, viewbox[2] / 5, viewbox[3] / 4].join(' ')
@@ -1271,7 +1310,7 @@ export default {
             .attr('viewBox', this.VIEWBOX)
             .on('end', () => {
               this.zoomed = false
-              d3.select(`#node_${this.qIdx}`).attr('class', 'station disabled')
+              d3.select(`#node_${this.qIdx}`).attr('class', 'station completed')
               this.qIdx++
               d3.select(`#node_${this.qIdx}`).attr('class', 'station')
               d3.select(`#roadto_${this.qIdx}`).transition().duration(500).style('opacity', 1)
