@@ -1,7 +1,7 @@
 <template>
   <div class="final-page fill">
     <div class="final-page__header">Поздравляем!</div>
-    <div class="final-page__body">Ваш набрали {{ score }} очков!</div>
+    <div class="final-page__body">Вы набрали {{ score }} очков!</div>
   </div>
 </template>
 
