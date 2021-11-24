@@ -1,16 +1,43 @@
 <template>
   <div id="app" class="content-container fill">
-    <rail-map />
+    <transition name="fade-start">
+      <start-page @start="handleStart" v-show="!started && !ended" :title="title" />
+    </transition>
+    <transition name="fade-start">
+      <rail-map v-show="started" @end="handleEnd" />
+    </transition>
+    <transition name="fade-start">
+      <end-page v-show="ended" :score="score" />
+    </transition>
     <copyright />
   </div>
 </template>
 
 <script>
 import Copyright from './components/Copyright.vue'
+import EndPage from './components/EndPage.vue'
 import RailMap from './components/RailMap.vue'
+import StartPage from './components/StartPage.vue'
 export default {
   name: 'App',
-  components: { RailMap, Copyright }
+  components: { RailMap, Copyright, StartPage, EndPage },
+  data() {
+    return {
+      started: false,
+      ended: false,
+      title: 'ИГРА - ПОБЕДА',
+      score: 0
+    }
+  },
+  methods: {
+    handleStart() {
+      this.started = true
+    },
+    handleEnd(score) {
+      this.score = score
+      this.ended = true
+    }
+  }
 }
 </script>
 
@@ -36,6 +63,22 @@ export default {
   color: #2c3e50;
 }
 
+.fade-start-enter-active,
+.fade-start-leave-active {
+  transition: opacity 1s;
+}
+.fade-start-enter, .fade-start-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .content-container {
   display: flex;
   align-items: center;
@@ -57,7 +100,6 @@ export default {
   border: 1px solid black;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.733);
   margin-top: 5%;
-  height: 600px;
   /* background-repeat: no-repeat;
   background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5)), url('/img/map-bg.jpg');
   background-size: cover; */
@@ -150,6 +192,13 @@ export default {
 .dialog__header {
   height: 20%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 300%;
+  color: black;
 }
 
 .dialog__content {
@@ -163,6 +212,10 @@ export default {
 .dialog__content--text {
   width: 60%;
   height: 100%;
+  font-size: 130%;
+  text-align: justify;
+  text-indent: 5%;
+  padding: 1%;
 }
 
 .dialog__content--img {
@@ -176,7 +229,7 @@ export default {
   max-height: 100%;
 }
 
-.dialog__content--wraper {
+.dialog__content--wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -186,17 +239,17 @@ export default {
   padding: 1%;
 }
 
-.dialog__content--wraper-img {
+.dialog__content--wrapper-img {
   width: 100%;
   height: 80%;
 }
 
-.dialog__content--wraper-img img {
+.dialog__content--wrapper-img img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.dialog__content--wraper-text {
+.dialog__content--wrapper-text {
   width: 100%;
   height: 20%;
   text-align: left;
@@ -214,19 +267,38 @@ export default {
   justify-content: flex-start;
 }
 
+.dialog__content--info {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog__content--btns-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .btn {
   padding: 10px 20px;
-  background: rgb(84, 84, 238);
+  background: linear-gradient(to bottom, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+  font-size: 110%;
   border: 1px solid black;
-  color: white;
+  color: black;
   cursor: pointer;
   transition-duration: 0.2s;
-  align-self: flex-end;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.76);
 }
 
 .btn:hover {
-  background: #afa;
+  background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+  border: 1px solid black;
   color: black;
+  box-shadow: none;
+}
+.btn:active {
+  box-shadow: none;
 }
 
 .radio-group {
@@ -289,5 +361,37 @@ export default {
 
 #node_5.disabled {
   fill: url(#imageRama2);
+}
+
+.final-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.final-text {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.final-images {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  height: 90%;
+  width: 100%;
+  padding: 2%;
+}
+
+.image-wrapper {
+  width: 46%;
+  height: 46%;
+  margin: 1%;
+}
+
+.image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
 }
 </style>

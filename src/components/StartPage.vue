@@ -1,7 +1,8 @@
 <template>
-  <div class="star-page fill">
+  <div class="start-page fill">
     <span class="start-page__title">{{ title }} </span>
-    <button class="start-page__button" @click="handleStart">Начать</button>
+
+    <button class="start-page__button btn" @click="handleStart">Начать</button>
   </div>
 </template>
 
@@ -20,8 +21,8 @@ export default {
 .start-page {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,10 +33,16 @@ export default {
 }
 
 .start-page__title {
-  margin-top: 5%;
+  margin: 10%;
+  color: white;
+  font-size: 650%;
+  filter: drop-shadow(1px 1px 2px black);
+  font-weight: bolder;
+  color: #d5ad6d;
 }
 
 .start-page__button {
   padding: 15px 30px;
+  font-size: 200%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="svg-container"></div>
-    <div class="info-container">score: {{ score }}</div>
+    <div class="info-container">Счёт: {{ score }}</div>
     <transition name="fade">
       <Dialog :question="currentQuestion" :head="currentCat" v-show="dialog" @close="handleCloseDialog" />
     </transition>
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       svg: null,
-      width: 800,
-      height: 600,
+      // width: 800,
+      // height: 600,
       VIEWBOX: ``,
       innerRadius: 30,
       outerRadius: 70,
@@ -165,12 +165,12 @@ export default {
         },
         {
           id: 4,
-          title: '',
+          title: '5',
           content: '',
           childrens: [
             {
               id: 0,
-              angle: 60,
+              angle: 25,
               text: '1',
               show: true
             },
@@ -200,7 +200,7 @@ export default {
         },
         {
           id: 5,
-          title: '',
+          title: '6',
           content: '',
           childrens: [
             {
@@ -223,7 +223,7 @@ export default {
             },
             {
               id: 3,
-              angle: 310,
+              angle: 350,
               text: '4',
               show: true
             }
@@ -358,7 +358,16 @@ export default {
             }
           ],
           final: {
-            title: 'Что обьединяет эти вопросы?',
+            title: `
+            <div class="final-wrapper">
+              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-images">
+                <div class="image-wrapper"><img src="/img/0_0.jpg"></div>
+                <div class="image-wrapper"><img src="/img/0_1.jpg"></div>
+                <div class="image-wrapper"><img src="/img/0_2.jpg"></div>
+                <div class="image-wrapper"><img src="/img/0_3.jpg"></div>
+              </div>
+            </div>`,
             type: 'single',
             answers: [
               [
@@ -391,7 +400,7 @@ export default {
             // 1 - 0
             {
               title:
-                'Ха­рак­тер­ной осо­бен­но­стью по­год­ных усло­вий мор­ских по­бе­ре­жий и по­бе­ре­жий круп­ных озёр яв­ля­ют­ся ветры, ме­ня­ю­щие два раза в сутки своё на­прав­ле­ние. В период Великой Отечественной войны, наши матросы, находясь на рейде в акватории  Охотского моря, вынуждены были ходить в противогазах, спасаясь от газовых атак  противника. Как называется ветер и в какое время суток, матросы могли находиться на корабле без противогаза?',
+                'Характерной особенностью погодных условий морских побережий и побережий крупных озёр являются ветры, меняющие два раза в сутки своё направление. В период Великой Отечественной войны, наши матросы, находясь на рейде в акватории  Охотского моря, вынуждены были ходить в противогазах, спасаясь от газовых атак  противника. Как называется ветер и в какое время суток, матросы могли находиться на корабле без противогаза?',
               type: 'multi',
               answers: [
                 [
@@ -522,7 +531,16 @@ export default {
             }
           ],
           final: {
-            title: 'Что обьединяет эти вопросы?',
+            title: `
+            <div class="final-wrapper">
+              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-images">
+                <div class="image-wrapper"></div>
+                <div class="image-wrapper"></div>
+                <div class="image-wrapper"></div>
+                <div class="image-wrapper"></div>
+              </div>
+            </div>`,
             type: 'single',
             answers: [
               [
@@ -553,8 +571,8 @@ export default {
           questions: [
             // 2 - 0
             {
-              title: `<div class="dialog__content--wraper"><div class="dialog__content--wraper-img"><img src="img\\2_0.jpg"></div>
-              <div class="dialog__content--wraper-text">Выберите участок, где можно было  бы разместить склад с боеприпасами, учитывая безопасность и недоступность для противника.</div></div>
+              title: `<div class="dialog__content--wrapper"><div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+              <div class="dialog__content--wrapper-text">Выберите участок, где можно было  бы разместить склад с боеприпасами, учитывая безопасность и недоступность для противника.</div></div>
                 `,
               type: 'single',
               answers: [
@@ -577,8 +595,8 @@ export default {
             },
             // 2 - 1
             {
-              title: `<div class="dialog__content--wraper"><div class="dialog__content--wraper-img"><img src="img\\2_0.jpg"></div>
-              <div class="dialog__content--wraper-text">Определите азимут от колодца до точки Б</div></div>`,
+              title: `<div class="dialog__content--wrapper"><div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+              <div class="dialog__content--wrapper-text">Определите азимут от колодца до точки Б</div></div>`,
               type: 'single',
               answers: [
                 [
@@ -604,7 +622,11 @@ export default {
             }
           ],
           final: {
-            title: 'Что обьединяет эти вопросы?',
+            title: `
+            <div class="dialog__content--wrapper">
+              <div class="dialog__content--wrapper-text">Что объединяет эти вопросы?</div>
+              <div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+            </div>`,
             type: 'single',
             answers: [
               [
@@ -744,7 +766,16 @@ export default {
             }
           ],
           final: {
-            title: 'Что обьединяет эти вопросы?',
+            title: `
+            <div class="final-wrapper">
+              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-images">
+                <div class="image-wrapper"><img src="/img/3_0.jpg"></div>
+                <div class="image-wrapper"><img src="/img/3_1.jpg"></div>
+                <div class="image-wrapper"><img src="/img/3_2.jpg"></div>
+                <div class="image-wrapper"><img src="/img/3_3.jpg"></div>
+              </div>
+            </div>`,
             type: 'single',
             answers: [
               [
@@ -902,27 +933,33 @@ export default {
                 'Это озеро – исторический памятник великого подвига русского народа. Здесь в 1242 г. Произошло знаменитое Ледовое побоище. Это пресноводное озеро лежит на северо-западе  страны. Котловина озера ледникового происхождения. Назовите данное озеро?',
               type: 'single',
               answers: [
-                {
-                  title: 'Чудское',
-                  correct: true
-                },
-                {
-                  title: 'Ладожское',
-                  correct: false
-                },
-                {
-                  title: 'Онежское',
-                  correct: false
-                },
-                {
-                  title: 'Телецкое',
-                  correct: false
-                }
+                [
+                  {
+                    title: 'Чудское',
+                    correct: true
+                  },
+                  {
+                    title: 'Ладожское',
+                    correct: false
+                  },
+                  {
+                    title: 'Онежское',
+                    correct: false
+                  },
+                  {
+                    title: 'Телецкое',
+                    correct: false
+                  }
+                ]
               ]
             }
           ],
           final: {
-            title: 'Что обьединяет эти вопросы?',
+            title: `
+            <div class="final-wrapper">
+              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-images"></div>
+            </div>`,
             type: 'single',
             answers: [
               [
@@ -1082,6 +1119,20 @@ export default {
       }
 
       console.log('sQIdx', this.sQIdx)
+    },
+    qIdx: function () {
+      if (_.isNil(this.nodes[this.qIdx])) {
+        this.qIdx--
+        this.$emit('end', this.score)
+      }
+    }
+  },
+  computed: {
+    width: () => {
+      return 800
+    },
+    height: () => {
+      return 600
     }
   },
   methods: {
@@ -1285,13 +1336,7 @@ export default {
         .attr('width', this.innerRadius * 2)
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/rubeg-disabled.jpg')
-      /*
 
-<pattern id="imageVokzal" x="200" y="-110" height="128" width="128"\n' +
-        '             patternUnits="userSpaceOnUse">\n' +
-        '      <image x="0" y="0" width="64" height="64" xlink:href="./img/vokzal.jpg"></image>\n' +
-        '    </pattern>
-*/
       const image = this.svg.append('image')
       image
         .attr('x', 0)
@@ -1468,7 +1513,9 @@ export default {
         !_.isNil(this.questions[this.qIdx].final) &&
         !this.questions[this.qIdx].completed
       ) {
-        this.currentQuestion = this.questions[this.qIdx].final
+        let tmp = _.cloneDeep(this.questions[this.qIdx].final)
+        tmp.answers = tmp.answers.map((i) => (i = _.shuffle(i)))
+        this.currentQuestion = tmp
         setTimeout(() => {
           this.dialog = true
         }, 1500)
@@ -1497,7 +1544,10 @@ export default {
     },
     showQuestion(id) {
       this.currentId = id
-      this.currentQuestion = this.questions[this.qIdx].questions[this.currentId]
+      let tmp = _.cloneDeep(this.questions[this.qIdx].questions[this.currentId])
+      tmp.answers = tmp.answers.map((i) => (i = _.shuffle(i)))
+      this.currentQuestion = tmp
+      this.currentCat = this.questions[this.qIdx].title
       this.dialog = true
     }
   }
@@ -1514,11 +1564,14 @@ export default {
   justify-content: flex-start;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+  font-size: 200%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 4px grey;
 }
 </style>
