@@ -362,10 +362,10 @@ export default {
             <div class="final-wrapper">
               <div class="final-text">Что объединяет эти вопросы?</div>
               <div class="final-images">
-                <div class="image-wrapper"><img src="/img/0_0.jpg"></div>
-                <div class="image-wrapper"><img src="/img/0_1.jpg"></div>
-                <div class="image-wrapper"><img src="/img/0_2.jpg"></div>
-                <div class="image-wrapper"><img src="/img/0_3.jpg"></div>
+                <div class="image-wrapper"><img src="./img/0_0.jpg"></div>
+                <div class="image-wrapper"><img src="./img/0_1.jpg"></div>
+                <div class="image-wrapper"><img src="./img/0_2.jpg"></div>
+                <div class="image-wrapper"><img src="./img/0_3.jpg"></div>
               </div>
             </div>`,
             type: 'single',
@@ -625,7 +625,7 @@ export default {
             title: `
             <div class="dialog__content--wrapper">
               <div class="dialog__content--wrapper-text">Что объединяет эти вопросы?</div>
-              <div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+              <div class="dialog__content--wrapper-img"><img src="./img/2_0.jpg"></div>
             </div>`,
             type: 'single',
             answers: [
@@ -770,10 +770,10 @@ export default {
             <div class="final-wrapper">
               <div class="final-text">Что объединяет эти вопросы?</div>
               <div class="final-images">
-                <div class="image-wrapper"><img src="/img/3_0.jpg"></div>
-                <div class="image-wrapper"><img src="/img/3_1.jpg"></div>
-                <div class="image-wrapper"><img src="/img/3_2.jpg"></div>
-                <div class="image-wrapper"><img src="/img/3_3.jpg"></div>
+                <div class="image-wrapper"><img src="./img/3_0.jpg"></div>
+                <div class="image-wrapper"><img src="./img/3_1.jpg"></div>
+                <div class="image-wrapper"><img src="./img/3_2.jpg"></div>
+                <div class="image-wrapper"><img src="./img/3_3.jpg"></div>
               </div>
             </div>`,
             type: 'single',

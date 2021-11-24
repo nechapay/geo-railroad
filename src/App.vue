@@ -190,7 +190,7 @@ export default {
 }
 
 .dialog__header {
-  height: 20%;
+  height: 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -202,7 +202,7 @@ export default {
 }
 
 .dialog__content {
-  height: 80%;
+  height: 90%;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -268,7 +268,7 @@ export default {
 }
 
 .dialog__content--info {
-  height: 20%;
+  height: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
