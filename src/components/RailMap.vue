@@ -65,7 +65,7 @@ export default {
             }
           ],
           position: {
-            x: 80,
+            x: 65,
             y: 85
           }
         },
@@ -120,6 +120,18 @@ export default {
               id: 1,
               angle: 150,
               text: '2',
+              show: true
+            },
+            {
+              id: 2,
+              angle: 230,
+              text: '3',
+              show: true
+            },
+            {
+              id: 3,
+              angle: 310,
+              text: '4',
               show: true
             }
           ],
@@ -194,7 +206,7 @@ export default {
             }
           ],
           position: {
-            x: 60,
+            x: 45,
             y: 50
           }
         },
@@ -229,8 +241,43 @@ export default {
             }
           ],
           position: {
-            x: 90,
+            x: 75,
             y: 20
+          }
+        },
+        {
+          id: 6,
+          title: '7',
+          content: '',
+          childrens: [
+            {
+              id: 0,
+              angle: 60,
+              text: '1',
+              show: true
+            },
+            {
+              id: 1,
+              angle: 150,
+              text: '2',
+              show: true
+            },
+            {
+              id: 2,
+              angle: 230,
+              text: '3',
+              show: true
+            },
+            {
+              id: 3,
+              angle: 350,
+              text: '4',
+              show: true
+            }
+          ],
+          position: {
+            x: 85,
+            y: 50
           }
         }
       ],
@@ -242,8 +289,7 @@ export default {
             // 0 - 0
             {
               title:
-                'Этот город расположен на побережье самого теплого моря России, его порт занимает' +
-                'первое место в стране по грузоперевозкам и является крупнейшим производителем цемента.',
+                'Этот город расположен на побережье самого теплого моря России, его порт занимает первое место в стране по грузоперевозкам и является крупнейшим производителем цемента.',
               type: 'single',
               answers: [
                 [
@@ -360,7 +406,7 @@ export default {
           final: {
             title: `
             <div class="final-wrapper">
-              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-text">Что объединяет эти города?</div>
               <div class="final-images">
                 <div class="image-wrapper"><img src="./img/0_0.jpg"></div>
                 <div class="image-wrapper"><img src="./img/0_1.jpg"></div>
@@ -395,7 +441,7 @@ export default {
         },
         // 1
         {
-          title: '«Ветер»',
+          title: 'Атмосферное явление',
           questions: [
             // 1 - 0
             {
@@ -533,7 +579,7 @@ export default {
           final: {
             title: `
             <div class="final-wrapper">
-              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-text">Какое атмосферное явление объединяет все эти задания?</div>
               <div class="final-images">
                 <div class="image-wrapper"></div>
                 <div class="image-wrapper"></div>
@@ -567,7 +613,7 @@ export default {
         },
         // 2
         {
-          title: '«Топографическая карта»',
+          title: 'Ориентирование',
           questions: [
             // 2 - 0
             {
@@ -619,6 +665,52 @@ export default {
                 ]
               ],
               img: '2_0.jpg'
+            },
+            // 2 - 2
+            {
+              title: `<div class="dialog__content--wrapper"><div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+              <div class="dialog__content--wrapper-text">Определить направление течения реки Чёрная</div></div>`,
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'с юго- запада на северо-восток',
+                    correct: true
+                  },
+                  {
+                    title: 'с юга на север',
+                    correct: false
+                  },
+                  {
+                    title: 'с северо-востока на юго-восток',
+                    correct: false
+                  },
+                  {
+                    title: 'с запада на восток',
+                    correct: false
+                  }
+                ]
+              ],
+              img: '2_0.jpg'
+            },
+            // 2 - 3
+            {
+              title: `<div class="dialog__content--wrapper"><div class="dialog__content--wrapper-img"><img src="img\\2_0.jpg"></div>
+              <div class="dialog__content--wrapper-text">Определить на каком берегу реки Чёрная расположен колодец?</div></div>`,
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'на левом',
+                    correct: true
+                  },
+                  {
+                    title: 'на правом',
+                    correct: false
+                  }
+                ]
+              ],
+              img: '2_0.jpg'
             }
           ],
           final: {
@@ -654,7 +746,7 @@ export default {
         },
         // 3
         {
-          title: '«Мореплаватели  - первооткрыватели»',
+          title: 'Новое на карте',
           questions: [
             // 3 - 0
             {
@@ -768,7 +860,7 @@ export default {
           final: {
             title: `
             <div class="final-wrapper">
-              <div class="final-text">Что объединяет эти вопросы?</div>
+              <div class="final-text">Что объединяет этих людей?</div>
               <div class="final-images">
                 <div class="image-wrapper"><img src="./img/3_0.jpg"></div>
                 <div class="image-wrapper"><img src="./img/3_1.jpg"></div>
@@ -803,7 +895,7 @@ export default {
         },
         // 4
         {
-          title: '«Природные рубежи»',
+          title: 'Ландшафты',
           questions: [
             // 4 - 0
             {
@@ -1018,17 +1110,17 @@ export default {
             // 5 - 1
             {
               title:
-                '«Апофео́з войны́» — картина русского художника  На раме сделана надпись: «Посвящается всем великим завоевателям — прошедшим, настоящим и будущим».',
+                '«Апофеоз войны» — картина русского художника  На раме сделана надпись: «Посвящается всем великим завоевателям — прошедшим, настоящим и будущим».',
               type: 'single',
               answers: [
                 [
                   {
                     title: 'А.К. Саврасов',
-                    correct: true
+                    correct: false
                   },
                   {
                     title: 'В.В. Верещагин',
-                    correct: false
+                    correct: true
                   },
                   {
                     title: 'А.И. Куинджи',
@@ -1098,6 +1190,117 @@ export default {
             }
           ],
           completed: false
+        },
+        // 6
+        {
+          title: 'Ваш выбор',
+          questions: [
+            // 6 - 0
+            {
+              title:
+                'Представитель этой   профессии может управлять судном,  боевыми ракетами и торпедными установками, обеспечивать  функционирование двигательной системы судна. Необходимо иметь твёрдый уравновешенный характер, быструю реакцию и сообразительность, устойчивость к психофизиологическому состоянию.  Получить эту профессию возможно в ВУЗах им. Ф.Ф.Ушакова, П.С. Нахимова, А.С. Попова.',
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'Военный моряк',
+                    correct: true
+                  },
+                  {
+                    title: 'Военный летчик',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный метеоролог',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный картограф',
+                    correct: false
+                  }
+                ]
+              ]
+            },
+            // 6 - 1
+            {
+              title:
+                'Представитель этой   профессии могут  с помощью специального оборудования осуществлять весь цикл создания топографических карт — от организации полевых экспедиций для получения актуальных сведений о состоянии местности до составления и публикации на основании этих данных новых карт в типографском или электронном виде.',
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'Военный картограф',
+                    correct: true
+                  },
+                  {
+                    title: 'Военный моряк',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный метеоролог',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный летчик',
+                    correct: false
+                  }
+                ]
+              ]
+            },
+            // 6 - 2
+            {
+              title:
+                'Представитель этой   военной  профессии обеспечивает командование и лётный состав всеми видами гидрометеорологической и геофизической информации для эффективного применения авиации и обеспечения безопасности полётов.',
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'Военный метеоролог',
+                    correct: true
+                  },
+                  {
+                    title: 'Военный картограф',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный моряк',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный летчик',
+                    correct: false
+                  }
+                ]
+              ]
+            },
+            // 6 - 3
+            {
+              title:
+                'Представитель этой  профессии  входит в состав элитной части армии любой страны и могут быть истребителями, бомбардировщиками тактического и стратегического типа, разведчиками…',
+              type: 'single',
+              answers: [
+                [
+                  {
+                    title: 'Военный метеоролог',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный картограф',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный моряк',
+                    correct: false
+                  },
+                  {
+                    title: 'Военный летчик',
+                    correct: true
+                  }
+                ]
+              ]
+            }
+          ],
+          completed: false
         }
       ]
     }
@@ -1150,11 +1353,13 @@ export default {
       mainGradient.append('stop').attr('class', 'stop-left').attr('offset', '0')
       mainGradient.append('stop').attr('class', 'stop-right').attr('offset', '1')
       // star
+      let x = utils.translateCoords(this.nodes[0].position.x, this.width)
+      let y = utils.translateCoords(this.nodes[0].position.y, this.height)
       let pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageStar')
-        .attr('x', 609)
-        .attr('y', 479)
+        .attr('x', x - this.innerRadius - 1)
+        .attr('y', y - this.innerRadius - 1)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1167,11 +1372,14 @@ export default {
         .attr('height', this.innerRadius * 2 + 2)
         .attr('xlink:href', './img/star.jpg')
 
+      x = utils.translateCoords(this.nodes[1].position.x, this.width)
+      y = utils.translateCoords(this.nodes[1].position.y, this.height)
+
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageFluger')
-        .attr('x', 210)
-        .attr('y', 450)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1187,8 +1395,8 @@ export default {
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageFluger2')
-        .attr('x', 210)
-        .attr('y', 450)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1201,11 +1409,14 @@ export default {
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/fluger-disabled.jpg')
       // compas
+
+      x = utils.translateCoords(this.nodes[2].position.x, this.width)
+      y = utils.translateCoords(this.nodes[2].position.y, this.height)
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageCompas')
-        .attr('x', 50)
-        .attr('y', 210)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1221,8 +1432,8 @@ export default {
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageCompas2')
-        .attr('x', 50)
-        .attr('y', 210)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1235,11 +1446,13 @@ export default {
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/compas-disabled.jpg')
       // ship
+      x = utils.translateCoords(this.nodes[3].position.x, this.width)
+      y = utils.translateCoords(this.nodes[3].position.y, this.height)
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageShip')
-        .attr('x', 290)
-        .attr('y', 60)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1255,8 +1468,8 @@ export default {
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageShip2')
-        .attr('x', 290)
-        .attr('y', 60)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1269,11 +1482,14 @@ export default {
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/ship-disabled.jpg')
 
+      x = utils.translateCoords(this.nodes[5].position.x, this.width)
+      y = utils.translateCoords(this.nodes[5].position.y, this.height)
+
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageRama')
-        .attr('x', 690)
-        .attr('y', 90)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1289,8 +1505,8 @@ export default {
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageRama2')
-        .attr('x', 690)
-        .attr('y', 90)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1303,11 +1519,14 @@ export default {
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/rama-disabled.jpg')
 
+      x = utils.translateCoords(this.nodes[4].position.x, this.width)
+      y = utils.translateCoords(this.nodes[4].position.y, this.height)
+
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageRubeg')
-        .attr('x', 450)
-        .attr('y', 270)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1323,8 +1542,8 @@ export default {
       pattern = svgDefs
         .append('pattern')
         .attr('id', 'imageRubeg2')
-        .attr('x', 450)
-        .attr('y', 270)
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
         .attr('height', 256)
         .attr('width', 256)
         .attr('patternUnits', 'userSpaceOnUse')
@@ -1336,6 +1555,43 @@ export default {
         .attr('width', this.innerRadius * 2)
         .attr('height', this.innerRadius * 2)
         .attr('xlink:href', './img/rubeg-disabled.jpg')
+
+      x = utils.translateCoords(this.nodes[6].position.x, this.width)
+      y = utils.translateCoords(this.nodes[6].position.y, this.height)
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageProff')
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/proff.jpg')
+
+      pattern = svgDefs
+        .append('pattern')
+        .attr('id', 'imageProff2')
+        .attr('x', x - this.innerRadius)
+        .attr('y', y - this.innerRadius)
+        .attr('height', 256)
+        .attr('width', 256)
+        .attr('patternUnits', 'userSpaceOnUse')
+
+      pattern
+        .append('image')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.innerRadius * 2)
+        .attr('height', this.innerRadius * 2)
+        .attr('xlink:href', './img/proff-disabled.jpg')
 
       const image = this.svg.append('image')
       image

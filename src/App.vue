@@ -89,6 +89,7 @@ export default {
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)), url('/img/bg.jpg');
   background-size: cover;
+  overflow: auto;
 }
 
 .fill {
@@ -216,6 +217,7 @@ export default {
   text-align: justify;
   text-indent: 5%;
   padding: 1%;
+  overflow: auto;
 }
 
 .dialog__content--img {
@@ -361,6 +363,14 @@ export default {
 
 #node_5.disabled {
   fill: url(#imageRama2);
+}
+
+#node_6 {
+  fill: url(#imageProff);
+}
+
+#node_6.disabled {
+  fill: url(#imageProff2);
 }
 
 .final-wrapper {
